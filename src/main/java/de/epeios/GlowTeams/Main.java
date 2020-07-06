@@ -6,5 +6,6 @@ import org.bukkit.Bukkit;
 public class Main extends JavaPlugin {
     public static void main(String[] args) {
         System.out.println("STFUUU");
+        System.out.println("Fehler!");
     }
 }

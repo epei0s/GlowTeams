@@ -19,6 +19,7 @@ public class GlowCommand implements CommandExecutor {
         Player target;
         final String chatIdentifier = "§8[§1GlowPlugin§8] ";
 
+
         if (args.length == 0) {
             if (sender instanceof Player) {
                 glowManager.setupTeams();
@@ -58,8 +59,8 @@ public class GlowCommand implements CommandExecutor {
                     sender.sendMessage(chatIdentifier + "§cDiese Rolle gibt es nicht!");
                     return false;
                 }
-                glowManager.orderPlayer(target);
                 glowManager.setupTeams();
+                glowManager.orderPlayer(target);
                 glowManager.reloadGlow(target);
                 target.sendMessage(chatIdentifier + "§aYour Role got set to §6" + targetGlowRole.toUpperCase());
 
@@ -94,4 +95,3 @@ public class GlowCommand implements CommandExecutor {
 
 
 }
-

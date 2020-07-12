@@ -24,13 +24,17 @@ public class GlowManager {
 
     public void orderPlayer(Player target) {    //put Player target into the right Team
         String targetGlowColor = config.getString("GlowRole." + target.getName());
-        try {
-            Team targetTeam = teamLink.get(GlowColor.valueOf(targetGlowColor));
-            targetTeam.addEntry(target.getName());
-            target.setScoreboard(board);
-        } catch (NullPointerException e) {
-            //e.printStackTrace();
-            throw new RuntimeException("TeamIsNull");
+        if (teamLink.get(GlowColor.valueOf(targetGlowColor)) != null) {
+            try {
+                Team targetTeam = teamLink.get(GlowColor.valueOf(targetGlowColor));
+                targetTeam.addEntry(target.getName());
+                target.setScoreboard(board);
+            } catch (NullPointerException e) {
+                //e.printStackTrace();
+                throw new RuntimeException("TeamIsNull");
+            }
+        } else {
+            System.out.println("§cNONONONO");
         }
     }
 
@@ -71,6 +75,7 @@ public class GlowManager {
     public void setTeam(Player target, String glowColor) {     //puts Player's Team in config.yml
         if (target != null) {
             if (GlowColor.contains(glowColor.toUpperCase())) {    //Assign Team in config
+                config.set("GlowRole." + target.getPlayer().getName(), null);
                 config.set("GlowRole." + target.getPlayer().getName(), glowColor);
                 Main.getPlugin().saveConfig();
             } else {

@@ -1,5 +1,6 @@
 package de.epeios.GlowTeams;
 
+import de.epeios.GlowTeams.commands.GlowCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Bukkit;
 
@@ -9,4 +10,10 @@ public class Main extends JavaPlugin {
         return plugin;
     }
 
+    @Override
+    public void onEnable() {
+        plugin = this;
+
+        getCommand("glow").setExecutor(new GlowCommand());
+    }
 }

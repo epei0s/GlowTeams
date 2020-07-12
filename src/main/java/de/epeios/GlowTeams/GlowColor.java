@@ -4,9 +4,22 @@ import org.bukkit.ChatColor;
 
 public enum GlowColor {
 
+    AQUA("AQUA"),
+    BLACK("BLACK"),
     BLUE("BLUE"),
-    DARKRED("DARK_RED"),
-    RED("RED");
+    DARK_AQUA("DARK_AQUA"),
+    DARK_BLUE("DARK_BLUE"),
+    DARK_GREEN("DARK_GREEN"),
+    DARK_GREY("DARK_GREY"),
+    DARK_PURPLE("DARK_PURPLE"),
+    DARK_RED("DARK_RED"),
+    GOLD("GOLD"),
+    GRAY("GRAY"),
+    GREEN("GREEN"),
+    LIGHT_PURPLE("LIGHT_PURPLE"),
+    RED("RED"),
+    WHITE("WHITE"),
+    YELLOW("YELLOW");
 
     private final String myChatColor;
 
